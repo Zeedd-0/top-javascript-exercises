@@ -21,7 +21,7 @@ describe('findTheOldest', () => {
     ]
     expect(findTheOldest(people).name).toBe('Ray');
   });
-  test.skip('finds the oldest person if yearOfDeath field is undefined on a non-oldest person', () => {
+  test('finds the oldest person if yearOfDeath field is undefined on a non-oldest person', () => {
     const people = [
       {
         name: "Carly",
@@ -40,7 +40,7 @@ describe('findTheOldest', () => {
     ]
     expect(findTheOldest(people).name).toBe('Ray');
   });
-  test.skip('finds the oldest person if yearOfDeath field is undefined for the oldest person', () => {
+  test('finds the oldest person if yearOfDeath field is undefined for the oldest person', () => {
     const people = [
       {
         name: "Carly",
@@ -55,6 +55,23 @@ describe('findTheOldest', () => {
         name: "Jane",
         yearOfBirth: 1912,
         yearOfDeath: 1941,
+      },
+    ]
+    expect(findTheOldest(people).name).toBe('Carly');
+  });
+  test('finds the oldest person if yearOfDeath field is undefined for every one', () => {
+    const people = [
+      {
+        name: "Carly",
+        yearOfBirth: 1066,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
       },
     ]
     expect(findTheOldest(people).name).toBe('Carly');
